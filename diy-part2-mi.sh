@@ -31,26 +31,26 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/diy/luc
 wget -P package/diy/openclash -c https://github.com/vernesong/OpenClash/archive/refs/heads/master.zip
 unzip -o package/diy/openclash/master.zip -d package/diy/openclash/
 
-#openwrt-v2ray
-git clone https://github.com/kuoruan/openwrt-v2ray.git package/diy/openwrt-v2ray
-
-#luci-app-v2ray
-git clone -b legacy https://github.com/kuoruan/luci-app-v2ray.git package/diy/luci-app-v2ray
-
 # 编译 po2lmo
 pushd package/diy/openclash/OpenClash-master/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 # cd $GITHUB_WORKSPACE/openwrt
 
+#openwrt-v2ray
+# git clone https://github.com/kuoruan/openwrt-v2ray.git package/diy/openwrt-v2ray
+
+#luci-app-v2ray
+# git clone -b legacy https://github.com/kuoruan/luci-app-v2ray.git package/diy/luci-app-v2ray
+
 # openwrt_nezha
-git clone https://github.com/Erope/openwrt_nezha.git package/diy/openwrt_nezha
+# git clone https://github.com/Erope/openwrt_nezha.git package/diy/openwrt_nezha
 
 # luci-app-adguardhome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/diy/luci-app-adguardhome
+# git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/diy/luci-app-adguardhome
 
 # luci-app-poweroff
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/diy/luci-app-poweroff
 
 # luci-app-aliddns
-git clone https://github.com/chenhw2/luci-app-aliddns.git  package/diy/luci-app-aliddns
+# git clone https://github.com/chenhw2/luci-app-aliddns.git  package/diy/luci-app-aliddns

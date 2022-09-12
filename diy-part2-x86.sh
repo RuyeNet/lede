@@ -16,9 +16,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # Modify default DNS
 sed -i '/network.$1.netmask'/a"\\ \t\ \t\ \t\ \tset network.\$1.dns='127.0.0.1 223.5.5.5 8.8.8.8'"  package/base-files/files/bin/config_generate
 
-# WIFI ON
-sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
 # Modify default theme
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 
@@ -31,23 +28,23 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/diy/luc
 wget -P package/diy/openclash -c https://github.com/vernesong/OpenClash/archive/refs/heads/master.zip
 unzip -o package/diy/openclash/master.zip -d package/diy/openclash/
 
-#openwrt-v2ray
-git clone https://github.com/kuoruan/openwrt-v2ray.git package/diy/openwrt-v2ray
-
-#luci-app-v2ray
-git clone -b legacy https://github.com/kuoruan/luci-app-v2ray.git package/diy/luci-app-v2ray
-
 # 编译 po2lmo
 pushd package/diy/openclash/OpenClash-master/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 # cd $GITHUB_WORKSPACE/openwrt
 
+#openwrt-v2ray
+# git clone https://github.com/kuoruan/openwrt-v2ray.git package/diy/openwrt-v2ray
+
+#luci-app-v2ray
+# git clone -b legacy https://github.com/kuoruan/luci-app-v2ray.git package/diy/luci-app-v2ray
+
 # openwrt_nezha
-git clone https://github.com/Erope/openwrt_nezha.git package/diy/openwrt_nezha
+# git clone https://github.com/Erope/openwrt_nezha.git package/diy/openwrt_nezha
 
 # luci-app-adguardhome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/diy/luci-app-adguardhome
+# git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/diy/luci-app-adguardhome
 
 # luci-app-poweroff
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/diy/luci-app-poweroff
